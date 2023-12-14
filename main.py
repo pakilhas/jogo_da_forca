@@ -1,6 +1,6 @@
+import getpass
 
-
-palavra = str(input('informe uma palavra: ')).upper()
+palavra = getpass.getpass('informe uma palavra: ').upper()
 
 acertos = 0
 erros = 0
