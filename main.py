@@ -1,5 +1,56 @@
 import getpass
 
+forca = """
+ ____
+|   |
+|   |
+|   º
+|
+-----
+"""
+vazio = """
+
+"""
+
+cabeca = """
+    O
+"""
+tronco = """
+    O
+    |
+"""
+braco_esquerdo = """
+    O
+   /|
+"""
+braco_direito = """
+    O
+   /|\\
+"""
+perna_esquerda = """
+    O
+   /|\\
+   /
+"""
+perna_direita = """
+    O
+   /|\\
+   / \\
+"""
+
+chances = [
+vazio,
+cabeca,
+tronco,
+braco_esquerdo,
+braco_direito,
+perna_esquerda,
+perna_direita
+
+]
+
+print(f'{forca}bem vindo ao jogo da forca')
+
 palavra = getpass.getpass('informe uma palavra: ').upper()
 
 acertos = 0
@@ -13,11 +64,11 @@ while acertos != len(palavra) and erros != 6:
  mensagem = ''
  for letra in palavra:
   if letra in letras_acert:
-   mensagem += letra + ' '
+   mensagem += f'{letra} '
   else:
    mensagem += '_ '
  print(mensagem)
- print('voce ja errou: ' + letras_errad)
+ print(forca + chances[erros])
 
  letra = input('digite a letra: ').upper()
 
